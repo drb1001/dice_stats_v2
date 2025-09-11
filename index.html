@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dice Roll Probability Distribution</title>
+  <title>Dice Stats</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Dice Probability Distribution</h1>
+  <h1>Dice Stats</h1>
+  <h3>Add some dice rolls below to compare their stats</h3>
+  <div id="helpText">
+    <details>
+      <summary>
+            Type your dice rolls <a target="_" href="https://wiki.roll20.net/Dice_Reference">as you would in Roll20</a>.  Most of the same syntax is supported.
+            (Click for more info)
+      </summary>
+      <ul>
+        <li>Standard dice rolls (d2, d3, d4, d6, d8, d10, d12, d20) eg: <span class="font-weight-bold">5d6</span></li>
+        <li>Advantage and disadvantage rolls (rolling 2 dice) - use kh/dh/kl/dl for keep/drop highest/lowest, eg: <span class="font-weight-bold">2d20kh</span></li>
+        <li>A special roll used in 5e starting stats rolls - roll 4 d6 and remove the lowest, ie: <span class="font-weight-bold">4d6dl</span></li>
+        <li>Modifiers on all of the above between -10 and +10 (written at the end), eg: <span class="font-weight-bold">2d20kh+4</span></li>
+        <!-- <li>Rerolling specific numbers (like brutal weapons in D&amp;D 4e) - using r&lt; (reroll anything less than or equal), eg: <span class="font-weight-bold">8d6r&lt;1</span></li> -->
+        <!-- <li>Rerolling once for specific numbers (like great weapon fighting in D&amp;D 5e) - using ro&lt; (reroll anything less than or equal, once only),  eg: <span class="font-weight-bold">3d10ro&lt;2</span></li> -->
+      </ul>
+    </details>
+  </div>
 
   <div class="form">
-    <label for="diceSpec1">First roll:</label>
+    <label for="diceSpec1">First roll</label>
     <input type="text" id="diceSpec1" value="2d6+3" placeholder="e.g. 3d6+2 or 2d6+1d8-1">
   </div>
 
   <div class="form">
-    <label for="diceSpec2">Second roll:</label>
+    <label for="diceSpec2">Second roll</label>
     <input type="text" id="diceSpec2" value="2d4+1" placeholder="e.g. 1d8+2">
   </div>
 

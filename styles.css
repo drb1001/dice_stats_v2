@@ -1,18 +1,67 @@
 body {
-  font-family: sans-serif;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 2rem;
+  text-align: center;
+
+}
+
+h1 {
+  font-weight: 500;
+}
+
+h3 {
+  color: #555;
+  font-weight: 400;
+}
+
+#helpText {
+  margin-bottom: 3rem;
+  font-size: 80%;
+  color: #555;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.font-weight-bold {
+  font-weight: 600;
 }
 
 label {
   display: inline-block;
-  width: 150px;
+  width: 100px;
+}
+
+#diceSpec1, #diceSpec2 {
+  width: 100px;
+  line-height: 1.5;
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  color: #495057;
 }
 
 .form {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#generate {
+  cursor: pointer;
+  color: white;
+  background-color: #23272b;
+  border-color: #1d2124;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border-radius: .25rem;
 }
 
 #chartContainer {
-  width: 500px; 
-  height: 500px;
+  width: 800px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
 }
