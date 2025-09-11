@@ -41,6 +41,14 @@ Calculates the probability distribution for dice rolls:
 - `2d6+1d8+3`: Two six-sided dice, one eight-sided die, and a modifier of +3.
 - `1d20-2`: One twenty-sided die with a modifier of -2.
 
+## Locally Testing
+
+To run tests locally, follow these steps:
+
+1. Ensure you have Node.js installed on your system.
+2. Install the required dependencies by running:  `npm install`
+3. Run the tests using the following command:  `npm test`
+
 ## Dependencies
 - [Chart.js](https://www.chartjs.org/) (loaded via CDN).
 
