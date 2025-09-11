@@ -22,7 +22,15 @@ test('Two dice distribution (2d6)', () => {
 
 test('Keep highest (2d6kh)', () => {
   const result = getDistribution(2, 6, 'kh');
-  expect(result.length).toBe(6); // Possible highest values: 1 to 6
+  expect(result.length).toBe(6); // Max value is 6
+  expect(result[5]).toBeCloseTo(11/36, 6); // 11/36 chance for value 6
   expect(result.reduce((a, b) => a + b, 0)).toBeCloseTo(1); // Probabilities sum to 1
-  expect(result[5]).toBeCloseTo(11/36, 6); // 11/36 chance for highest value 6
+
+});
+
+test('3 dice distribution (3d6)', () => {
+  const result = getDistribution(3, 6);
+  expect(result.length).toBe(18); // Max value is 18
+  expect(result[2]).toBeCloseTo(1/(6*6*6), 6); // 1/6^3 chance for value 3
+  expect(result.reduce((a, b) => a + b, 0)).toBeCloseTo(1); // Probabilities sum to 1
 });
