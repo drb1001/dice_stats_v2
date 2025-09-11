@@ -2,7 +2,7 @@ let chart;
 
 export function initChart(ctx) {
   chart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: [],
       datasets: []
@@ -11,7 +11,12 @@ export function initChart(ctx) {
       plugins: {
         title: {
           display: true,
-          text: ''
+          text: '',
+          padding: 20
+        },
+        legend: {
+          display: true,
+          position: 'bottom',
         }
       },
       responsive: true,

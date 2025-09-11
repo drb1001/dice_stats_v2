@@ -26,7 +26,7 @@ function generate() {
     const data2 = labels.map(label => dist2[label] || 0);
     console.log("Final labels and data:", { labels, data1, data2 });
 
-    const titleText = `Comparison: ${groups1.map(g => g.raw).join(" ")} vs ${groups2.map(g => g.raw).join(" ")}`;
+    const titleText = `${groups1.map(g => g.raw).join(" ")} vs ${groups2.map(g => g.raw).join(" ")}`;
     console.log("Chart title:", titleText);
 
     updateChart(labels, [
