@@ -8,15 +8,16 @@ export function initChart(ctx) {
       datasets: []
     },
     options: {
+      elements: {
+        line: { tension: 0.1 }
+      },
       plugins: {
-        title: {
-          display: true,
-          text: '',
-          padding: 20
-        },
+        tooltip : { enabled: false },
+        title: { display: false },
         legend: {
           display: true,
-          position: 'bottom',
+          position: 'top',
+          labels: { boxHeight: 0 }
         }
       },
       responsive: true,
@@ -32,9 +33,8 @@ export function initChart(ctx) {
   });
 }
 
-export function updateChart(labels, data, titleText) {
+export function updateChart(labels, data) {
   chart.data.labels = labels;
   chart.data.datasets = data;
-  chart.options.plugins.title.text = titleText;
   chart.update();
 }

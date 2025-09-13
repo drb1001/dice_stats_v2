@@ -26,13 +26,10 @@ function generate() {
     const data2 = labels.map(label => dist2[label] || 0);
     console.log("Final labels and data:", { labels, data1, data2 });
 
-    const titleText = `${groups1.map(g => g.raw).join(" ")} vs ${groups2.map(g => g.raw).join(" ")}`;
-    console.log("Chart title:", titleText);
-
     updateChart(labels, [
-      { label: groups1.map(g => g.raw).join(" "), data: data1, backgroundColor: 'rgba(54, 162, 235, 0.6)' },
-      { label: groups2.map(g => g.raw).join(" "), data: data2, backgroundColor: 'rgba(255, 99, 132, 0.6)' }
-    ], titleText);
+      { label: groups1.map(g => g.raw).join(""), data: data1, borderColor: 'rgba(54, 162, 235, 0.6)' },
+      { label: groups2.map(g => g.raw).join(""), data: data2, borderColor: 'rgba(255, 99, 132, 0.6)' }
+    ]);
   } catch (error) {
     console.error("Error during distribution generation:", error);
     alert(error.message);
