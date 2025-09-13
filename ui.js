@@ -16,11 +16,10 @@ function generate() {
     console.log("Generated distributions:", { dist1, dist2 });
     console.log("Parsed groups:", { groups1, groups2 });
 
-    const labels1 = Array.from({ length: dist1.length}, (_, i) => i);
-    const labels2 = Array.from({ length: dist2.length}, (_, i) => i);
+    const labels1 = Array.from(dist1.keys());
+    const labels2 = Array.from(dist2.keys());
     console.log("Labels for distributions:", { labels1, labels2 });
 
-    // reminder: convert 0-indexed dist to 1-indexed labels
     const labels = Array.from(new Set([...labels1, ...labels2])).sort((a, b) => a - b);
     const data1 = labels.map(label => dist1[label] || 0);
     const data2 = labels.map(label => dist2[label] || 0);

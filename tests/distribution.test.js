@@ -25,8 +25,8 @@ test('Generate distributions for valid specs', () => {
     { type: 'dice', nDice: 1, nSides: 4, modifier: '', raw: '1d4' },
     { type: 'modifier', value: 2, raw: '+2' }
   ]);
-  expect(dist1.length).toBe(12); // Max possible sum with 2d6 is 12
-  expect(dist2.length).toBe(6); // Max possible sum with 1d4+2 is 6
+  expect(dist1.length).toBe(13); // Max possible sum with 2d6 is 12, so 13 elements including 0
+  expect(dist2.length).toBe(7); // Max possible sum with 1d4+2 is 6, so 7 elements including 0
 });
 
 test('Generate distributions for invalid specs', () => {
