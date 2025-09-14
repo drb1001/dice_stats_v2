@@ -1,4 +1,4 @@
-import { parseDiceSpec } from '../parser.js';
+import { parseDiceSpec } from '..//js/parser.js';
 
 test('Valid dice specification (2d12)', () => {
     const result = parseDiceSpec('2d12');

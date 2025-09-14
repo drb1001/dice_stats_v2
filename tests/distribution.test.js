@@ -1,4 +1,4 @@
-import { shiftDistribution, generateDistributions } from '../distribution.js';
+import { shiftDistribution, generateDistributions } from '..//js/distribution.js';
 
 test('Shift distribution positively', () => {
   const result = shiftDistribution([0, 0, 1, 2, 3], 2);

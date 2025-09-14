@@ -9,7 +9,10 @@ export function initChart(ctx) {
     },
     options: {
       elements: {
-        line: { tension: 0.1 }
+        line: { 
+          tension: 0.1,
+          fill: 'origin'
+        }
       },
       plugins: {
         tooltip : { enabled: false },

@@ -1,8 +1,4 @@
-import { parseDiceSpec } from '../ui.js';
-
-// filepath: c:\Users\Dan\Documents\code_git\dice_stats_v2\ui.test.js
-
-// filepath: c:\Users\Dan\Documents\code_git\dice_stats_v2\ui.test.js
+import { parseDiceSpec } from '../js/ui.js';
 
 describe('parseDiceSpec', () => {
     test('Parses single dice specification (1d6)', () => {

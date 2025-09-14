@@ -1,4 +1,4 @@
-import { getDistribution } from '../dice.js';
+import { getDistribution } from '../js/dice.js';
 
 test('Single die distribution (1d6)', () => {
   const result = getDistribution(1, 6);
