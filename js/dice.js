@@ -7,8 +7,10 @@ export function getDistribution(nDice, nSides, modifier = '') {
     return [0].concat(Array(nSides).fill(1 / nSides));
   }
 
-  // handle the case for 2 dice with keep highest/lowest
-  if (modifier === 'kh' && nDice === 2) {
+  // handle character rolls 3d6kh1
+
+  // handle the case for 2 dice with keep highest
+  if ((modifier === 'kh'  || modifier === 'dl') && nDice === 2) {
     console.log(`Applying 'keep highest' logic for 2 dice.`);
     let dist = [0].concat(Array(nSides).fill(1 / nSides));
     let newDist = Array(dist.length).fill(0);
@@ -23,6 +25,24 @@ export function getDistribution(nDice, nSides, modifier = '') {
     console.log(`Resulting distribution:`, newDist);
     return newDist;
   }
+
+  // handle the case for 2 dice with keep lowest
+  if ((modifier === 'kl' || modifier === 'dh') && nDice === 2) {
+    console.log(`Applying 'keep lowest' logic for 2 dice.`);
+    let dist = [0].concat(Array(nSides).fill(1 / nSides));
+    let newDist = Array(dist.length).fill(0);
+
+    for (let i = 0; i < dist.length; i++) {
+      for (let j = 0; j < dist.length; j++) {
+        const highest = Math.min(i, j);
+        newDist[highest] += dist[i] * dist[j];
+      }
+    }
+
+    console.log(`Resulting distribution:`, newDist);
+    return newDist;
+  }
+
 
   let dist = [0].concat(Array(nSides).fill(1 / nSides));
 

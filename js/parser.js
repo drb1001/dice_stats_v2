@@ -1,6 +1,6 @@
 export function parseDiceSpec(spec) {
   console.log(`Parsing dice specification: "${spec}"`);
-  const parts = spec.replace(/\s+/g, "").match(/([+-]?\d+d\d+(kh)?|[+-]?\d+)/gi);
+  const parts = spec.replace(/\s+/g, "").match(/([+-]?\d+d\d+(kh|kl|dh|dl)?|[+-]?\d+)/gi);
 
   if (!parts) {
     console.log("No valid parts found in the input.");
@@ -10,11 +10,11 @@ export function parseDiceSpec(spec) {
   const groups = [];
   for (let part of parts) {
     console.log(`Processing part: "${part}"`);
-    let diceMatch = part.match(/^([+-]?\d+)d(\d+)(kh)?$/i);
+    let diceMatch = part.match(/^([+-]?\d+)d(\d+)(kh|kl|dh|dl)?$/i);
     if (diceMatch) {
       const nDice = parseInt(diceMatch[1], 10);
       const nSides = parseInt(diceMatch[2], 10);
-      const modifier = diceMatch[3] || ''; // "kh" if present, otherwise empty string
+      const modifier = diceMatch[3] || ''; // extract the modifier or default to empty string
       console.log(`Matched dice group: nDice=${nDice}, nSides=${nSides}, modifier="${modifier}"`);
       groups.push({ type: "dice", nDice, nSides, modifier, raw: part });
       continue;

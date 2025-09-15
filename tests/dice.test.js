@@ -30,6 +30,33 @@ test('Keep highest (2d6kh)', () => {
 
 });
 
+test('Drop lowest (2d6kh)', () => {
+  const result = getDistribution(2, 6, 'dl');
+  expect(result.length).toBe(7); // Max value is 6, so 7 elements including 0
+  expect(result[0]).toBe(0);
+  expect(result[6]).toBeCloseTo(11/36, 6); // 11/36 chance for value 6
+  expect(result.reduce((a, b) => a + b, 0)).toBeCloseTo(1); // Probabilities sum to 1
+
+});
+
+test('Keep lowest (2d6kl)', () => {
+  const result = getDistribution(2, 6, 'kl');
+  expect(result.length).toBe(7); // Max value is 6, so 7 elements including 0
+  expect(result[0]).toBe(0);
+  expect(result[1]).toBeCloseTo(11/36, 6); // 11/36 chance for value 1
+  expect(result.reduce((a, b) => a + b, 0)).toBeCloseTo(1); // Probabilities sum to 1
+
+});
+
+test('Drop highest (2d6dh)', () => {
+  const result = getDistribution(2, 6, 'dh');
+  expect(result.length).toBe(7); // Max value is 6, so 7 elements including 0
+  expect(result[0]).toBe(0);
+  expect(result[1]).toBeCloseTo(11/36, 6); // 11/36 chance for value 1
+  expect(result.reduce((a, b) => a + b, 0)).toBeCloseTo(1); // Probabilities sum to 1
+
+});
+
 test('3 dice distribution (3d6)', () => {
   const result = getDistribution(3, 6);
   expect(result.length).toBe(19); // Max value is 18, so 19 elements including 0
