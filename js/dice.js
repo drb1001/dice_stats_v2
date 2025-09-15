@@ -7,8 +7,6 @@ export function getDistribution(nDice, nSides, modifier = '') {
     return [0].concat(Array(nSides).fill(1 / nSides));
   }
 
-  // handle character rolls 3d6kh1
-
   // handle the case for 2 dice with keep highest
   if ((modifier === 'kh'  || modifier === 'dl') && nDice === 2) {
     console.log(`Applying 'keep highest' logic for 2 dice.`);

@@ -11,7 +11,7 @@ export function shiftDistribution(dist, shift) {
   }
 }
 
-function processGroups(groups) {
+export function processGroups(groups) {
   console.log(`Processing groups:`, groups);
   let dist = [1];
 

@@ -1,0 +1,22 @@
+{
+  "name": "dice_stats_v2",
+  "version": "1.0.0",
+  "description": "This project visualizes the probability distribution of dice rolls based on user-defined dice notation. It uses JavaScript and the Chart.js library to generate and display the distribution in a bar chart.",
+  "main": "chart.js",
+  "scripts": {
+    "test": "jest",
+    "transform": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drb1001/dice_stats_v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/drb1001/dice_stats_v2",
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "jest": "^30.1.3"
+  }
+}

@@ -51,6 +51,8 @@ To run tests locally, follow these steps:
 
 ## Dependencies
 - [Chart.js](https://www.chartjs.org/) (loaded via CDN).
+- Jest is used for running tests in development
+- Babel is used to handle import / export statements with Jest
 
 ## License
 This project is open-source and available under the MIT License.
